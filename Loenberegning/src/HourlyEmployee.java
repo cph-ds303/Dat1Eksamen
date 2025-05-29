@@ -16,4 +16,27 @@
         return numberOfHours * payPrHour;
         }
 
+
+    public double getNumberOfHours(){
+
+    return numberOfHours;
+    }
+
+    public double getPayPrHour(){
+
+    return payPrHour;
+    }
+
+    public void setNumberOfHours(double numberOfHours) {
+
+        this.numberOfHours = numberOfHours;
+
+    }
+
+    public void setPayPrHour (double payPrHour){
+
+    this.payPrHour = payPrHour;
+    }
+
+
     }

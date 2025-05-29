@@ -12,14 +12,12 @@ public abstract class  Employee {
 
     public String getEmployeeName () {
 
-        return employeeName = "";
+        return employeeName;
 
     }
 
-
-
+    public void setEmployeeName (String employeeName){}
 
     public abstract double calculateSalary();
 
-
-    }
+}
