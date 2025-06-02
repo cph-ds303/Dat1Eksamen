@@ -17,4 +17,7 @@
         isDone = true;
     }
 
+    public void markAsUndone (){
+        isDone = false;
+    }
     }
