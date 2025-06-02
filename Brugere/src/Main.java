@@ -5,7 +5,7 @@ public class Main {
 
 
             User user1 = new User ("Jørgen", "123");
-            User user2 = new User ("Peter", "2222", "penis@jensen.dk", "12345678");
+            User user2 = new User ("Peter", "2222", "Peter@jensen.dk", "12345678");
 
             ArrayList<User> userList = new ArrayList<>();
             userList.add(user1);
