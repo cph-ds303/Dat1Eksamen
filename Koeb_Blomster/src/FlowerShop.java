@@ -8,7 +8,8 @@ public class FlowerShop {
 
 
     public FlowerShop() {
-        ArrayList<String> flowers = new ArrayList<>();
+
+        this.flowers = new ArrayList<>();
         flowers.add("Roser" + " 20kr");
         flowers.add("Tulipaner" + " 20kr");
         flowers.add("Liljer" + " 20kr");
@@ -20,7 +21,6 @@ public class FlowerShop {
         flowers.add("Hortensia" + " 80kr");
         flowers.add("Sankt Hans Urt" + " 80kr");
 
-        this.flowers = flowers;
 
     }
 
@@ -33,14 +33,34 @@ public class FlowerShop {
         }
     }
 
-    public void runDialog(){
-
+    public void runDialog() {
         Scanner scanner = new Scanner(System.in);
         showFlowerOptions();
 
+        for (int i = 1; i <= 3; i++) {
+            System.out.print("Vælg blomst:" + i + " (indtast tal fra 1 til 10): ");
+            int choice = scanner.nextInt();
 
+            if (choice >= 1 && choice <= 4) {
+                total += 20;
+            } else if (choice >= 5 && choice <= 7) {
+                total += 40;
+            } else if (choice >= 8 && choice <= 10) {
+                total += 80;
+            } else {
+                System.out.println("Ugyldigt valg. Prøv igen.");
+                i--;
+            }
+        }
 
+        System.out.print("Vil du have blomsterne bundet i en buket? (ja/nej): ");
+        scanner.nextLine();
+        String svar = scanner.nextLine().toLowerCase();
 
+        if (svar.equals("ja")) {
+            total += 50;
+        }
+
+        System.out.println("Den samlede pris er: " + total + " kr.");
     }
-
 }
