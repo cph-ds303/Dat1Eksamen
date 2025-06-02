@@ -13,7 +13,7 @@ public class Main {
 
 
         StringHandler sh = new StringHandler();
-        ArrayList<String> processedText = sh.replaceText("data/students.txt", names);
+        ArrayList<String> processedText = sh.replaceText("data/students.txt",  names);
 
 
         for (String text : processedText){
