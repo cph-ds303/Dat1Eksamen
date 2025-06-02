@@ -12,7 +12,6 @@
         this.isDone = isDone;
     }
 
-
     public void markAsDone (){
 
         isDone = true;

@@ -8,6 +8,7 @@ public class Main {
 
         TodoList todo = new TodoList(itemList);
 
+
         todo.items.add(new Item("Drikke vand", true));
         todo.items.get(1).markAsDone();
 

@@ -10,7 +10,7 @@ public class ItemLoader {
 
         ArrayList<Item> items = new ArrayList<>();
         try {
-            File file = new File("data/todo.csv");
+            File file = new File(path);
             Scanner scanner = new Scanner(file);
 
             scanner.nextLine();

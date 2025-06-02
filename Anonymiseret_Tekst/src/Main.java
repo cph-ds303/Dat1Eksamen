@@ -1,26 +1,25 @@
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.Arrays;
-import java.util.List;
+import java.util.ArrayList;
+
 
 public class Main {
     public static void main(String[] args) {
-        try {
-            String text = Files.readString(Path.of("data/students.txt"));
 
-            List<String> names = Arrays.asList("Anders", "Katrine", "Joakim", "Stine");
 
-            StringHandler handler = new StringHandler();
+        ArrayList<String> names = new ArrayList<>();
+        names.add("Katrine");
+        names.add("Stine");
+        names.add("Joakim");
+        names.add("Anders");
 
-            String anonymizedText = handler.replaceText(text, names);
-            System.out.println("Original tekst:");
+
+        StringHandler sh = new StringHandler();
+        ArrayList<String> processedText = sh.replaceText("data/students.txt", names);
+
+
+        for (String text : processedText){
+
             System.out.println(text);
-            System.out.println("\nAnonymiseret tekst:");
-            System.out.println(anonymizedText);
-
-        } catch (IOException e) {
-            System.out.println("Fejl ved læsning af fil: " + e.getMessage());
         }
     }
+
 }
