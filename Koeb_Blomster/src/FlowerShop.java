@@ -55,9 +55,9 @@ public class FlowerShop {
 
         System.out.print("Vil du have blomsterne bundet i en buket? (ja/nej): ");
         scanner.nextLine();
-        String svar = scanner.nextLine().toLowerCase();
+        String answer = scanner.nextLine().toLowerCase();
 
-        if (svar.equals("ja")) {
+        if (answer.equals("ja")) {
             total += 50;
         }
 
