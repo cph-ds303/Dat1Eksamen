@@ -1,4 +1,4 @@
-public class User {
+public class User implements Comparable<User> {
 
     private String name;
     private String password;
@@ -10,18 +10,23 @@ public class User {
 
         this.name = name;
         this.password = password;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
 
-        if (email.contains("@")) {
 
-            this.email = email;
+        if (name.length() > 12) {
 
-        } else  {
+            throw new IllegalArgumentException("Name must be less than 12 characters");
+        }
 
+        if (!Character.isUpperCase(name.charAt(0))) {
+            throw new IllegalArgumentException("Name must start with an uppercase letter");
+        }
+
+        if (!email.contains("@")) {
             throw new IllegalArgumentException("Email is not valid");
 
         }
-
-        this.phoneNumber = phoneNumber;
     }
 
     public User (String name, String password){
@@ -80,13 +85,19 @@ public class User {
 
     public String toString() {
         String result = "Navn: " + name;
-        if (email != null) {
+        if (email != null ) {
             result += ", Email: " + email;
         }
+
         if (phoneNumber != null) {
             result += ", Telefon: " + phoneNumber;
         }
         return result;
+    }
+
+    @Override
+    public int compareTo(User o) {
+        return this.name.compareTo(o.name);
     }
 
 }
